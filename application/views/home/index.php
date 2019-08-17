@@ -1,307 +1,93 @@
- <!--Carousel Wrapper-->
-  <div id="carousel-example-1z" class="carousel slide carousel-fade pt-4" data-ride="carousel">
-
-    <!--Indicators-->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-      <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-    </ol>
-    <!--/.Indicators-->
-
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-
-      <!--First slide-->
-      <div class="carousel-item active">
-        <div class="view" style="background-image: url('<?= base_url();  ?>/assets/img/foto_produk/home.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-          <!-- Mask & flexbox options-->
-          <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-            <!-- Content -->
-            <div class="text-center white-text mx-5 wow bounce">
-              <h1 class="mb-4">
-                <strong>Buku Pintar</strong>
-              </h1>
-
-              <p>
-                <strong>Layanan Penjualan Buku Terbaik</strong>
-              </p>
-
-             
-            </div>
-            <!-- Content -->
-
-          </div>
-          <!-- Mask & flexbox options-->
-
-        </div>
-      </div>
-      <!--/First slide-->
-
-      <!--Second slide-->
-      <div class="carousel-item">
-        <div class="view" style="background-image: url('<?= base_url();  ?>/assets/img/foto_produk/home1.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-          <!-- Mask & flexbox options-->
-          <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-            <!-- Content -->
-            <div class="text-right white-text mx-5 wow fadeIn">
-              <h1 class="mb-4">
-                <strong>Buku Pintar</strong>
-              </h1>
-
-              <p style="font-size: 50px;">
-                Siap Melayani Anda...
-              </p>
-            </div>
-            <!-- Content -->
-
-          </div>
-          <!-- Mask & flexbox options-->
-
-        </div>
-      </div>
-      <!--/Second slide-->
-
-      <!--Third slide-->
-      <div class="carousel-item">
-        <div class="view" style="background-image: url('<?= base_url(); ?>/assets/img/foto_produk/home2.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-          <!-- Mask & flexbox options-->
-          <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
-
-            <!-- Content -->
-            <div class="text-center white-text mx-5 wow fadeIn">
-             
-
-              <p>
-                <strong style="font-size: 20px;">
-                  kami bekerja sama dengan para ahli untuk mendapatkan Buku yang bagus
-                </strong>
-              </p>
-            </div>
-            <!-- Content -->
-
-          </div>
-          <!-- Mask & flexbox options-->
-
-        </div>
-      </div>
-      <!--/Third slide-->
-
-    </div>
-    <!--/.Slides-->
-
-    <!--Controls-->
-    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-    <!--/.Controls-->
-
-  </div>
-  <!--/.Carousel Wrapper-->
-
+  
 
   <!--Main layout-->
-  <main>
-    <div class="container">
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
 
-    <div class="text-center mt-5">
-    <?php if(empty($produk)) : ?>
-    
-    <?php else: ?>
-      <h2>Buku Favorit</h2>
-       <hr style="width: 250px; border-top: 3px solid #999;" class="mb-5">
-     <?php endif; ?> 
-    </div>
-     
-   
-      <!--Section: Products v.3-->
-      <section class="text-center mb-4">
-
-        <!--Grid row-->
-        <div class="row wow fadeIn">
-
-          <!--Grid column-->
-          <?php if(empty($produk)) : ?>
-            
-              <div class="col-md-12">
-                <div class="alert alert-danger" role="alert">
-                  Data tidak ditemukan
-                </div>
-              </div>
-            
-           <?php endif; ?> 
+<?php foreach ($detail as $beli ) : ?>
   
-           <?php foreach($produk as $p) : ?>
-           
-          <div class="col-lg-3 col-md-8 mb-4">
+      <!--Grid row-->
+      <div class="row wow fadeIn">
 
-            <!--Card-->
-            <div class="card">
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
 
-              <!--Card image-->
-              
-                <img src="<?= base_url(); ?>/assets/img/foto_produk/<?= $p['foto_produk']; ?>" height="300" class="card-img-top"
-                  alt="">
-                
-              
-              <!--Card image-->
+          <img src="<?= base_url(); ?>assets/img/foto_produk/<?= $beli['foto_produk']; ?>" class="img-fluid" style="height: 400px; width: 80%">
 
-              <!--Card content-->
-              <div class="card-body text-center">
-                <!--Category & Title-->
-                <a href="" class="grey-text">
-                  <h6><?= $p['nama_penulis']; ?></h6>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">
-                      <span class="badge badge-pill danger-color"></span>
-                    </a>
-                  </strong>
-                </h5>
+        </div>
+        <!--Grid column-->
 
-                <h4 class="font-weight-bold blue-text">
-                  <strong>Rp. <?= number_format($p['harga_produk']); ?></strong>
-                </h4>
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
 
-                <div class="row">
-                  <div class="col-sm-6">
-                    <a href="<?= base_url(); ?>home/beli/<?= $p['id_produk']; ?>" class="btn btn-primary btn-sm">Beli</a>
-                  </div>
+          <!--Content-->
+          <div class="p-4">
 
-                  <div class="col-sm-6">
-                    <a href="<?= base_url(); ?>home/detail/<?= $p['id_produk']; ?>" class="btn btn-warning btn-sm">Detail</a>
-                  </div>
-                </div>
-
-              </div>
-              <!--Card content-->
-
+            <div class="mb-3">
+              <a href="">
+                <span class="badge red mr-1"><?= $beli['nama_kategori'] ?></span>
+              </a>
             </div>
-            <!--Card-->
 
+            <p class="lead">
+              <span>Rp. <?= number_format($beli['harga_produk']) ?></span>
+            </p>
+
+            <p class="lead font-weight-bold"><?= $beli['nama_produk'] ?></p>
+
+            
+
+            <script>
+              var angka = <?= $beli['stok_produk'] ?>;   
+              </script>
+            <form class="d-flex justify-content-left" method="post">
+              <!-- Default input -->
+              <input type="text" id="number" max="<?= $beli['stok_produk']; ?>" name="jumlah" class="form-control" style="width: 100px" autocomplete="off" required>
+              <?php if( $beli['stok_produk'] == 0) : ?>
+
+                <button class="btn btn-danger btn-md my-0 p" type="button" onclick="alert('Empty Produk');">Empty Produk
+                <i class="fas fa-close ml-1"></i>
+              </button>
+
+               <?php else : ?> 
+              <button class="btn btn-primary btn-md my-0 p" type="submit" name="beli">Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            <?php endif; ?>
+
+            </form>
+            
+            <p class="font-weight-bold mt-4">Stok</p>
+            <div class="progress" style="height: 12px;">
+              <div class="progress-bar" role="progressbar" style="width: <?= $beli['stok_produk']; ?>%;"><?= $beli['stok_produk']; ?></div>
+            </div>
+            <?php 
+            $id_produk = $beli['id_produk'];
+            if(isset($_POST["beli"]))
+            {
+              $jumlah = $_POST["jumlah"];
+              $_SESSION['keranjang'][$id_produk] = $jumlah;
+
+              echo "<script>alert('Produk telah masuk ke keranjang');</script>";
+              echo "<script>window.location.href='http://localhost/Buku_pintar/home/keranjang';</script>";
+            }
+             ?> 
           </div>
-          <?php endforeach; ?>
-          <!--Grid column-->
+          <!--Content-->
 
+        </div>
+        <!--Grid column-->
 
-         
+      </div>
+      <!--Grid row-->
 
-         
-
-      </section>
-      <!--Section: Products v.3-->
-     
-
-    </div>
-  </main>
-  <!--Main layout-->
-
-
-
-    <!--Main layout-->
-  <main>
-    <div class="container">
-
-    <div class="text-center mt-5">
-    <?php if(empty($new)) : ?>
     
-    <?php else: ?>
-      <h2>Buku Baru</h2>
-       <hr style="width: 250px; border-top: 3px solid #999;" class="mb-5">
-     <?php endif; ?> 
-    </div>
-     
-   
-      <!--Section: Products v.3-->
-      <section class="text-center mb-4">
-
-        <!--Grid row-->
-        <div class="row wow fadeIn">
-
-          <!--Grid column-->
-          <?php if(empty($new)) : ?>
-            
-              <div class="col-md-12">
-                <div class="alert alert-danger" role="alert">
-                  Data tidak ditemukan
-                </div>
-              </div>
-            
-           <?php endif; ?> 
-  
-           <?php foreach($new as $n) : ?>
-           
-          <div class="col-lg-3 col-md-8 mb-4">
-
-            <!--Card-->
-            <div class="card">
-
-              <!--Card image-->
-              
-                <img src="<?= base_url(); ?>/assets/img/foto_produk/<?= $n['foto_produk']; ?>" height="300" class="card-img-top"
-                  alt="">
-                
-              
-              <!--Card image-->
-
-              <!--Card content-->
-              <div class="card-body text-center">
-                <!--Category & Title-->
-                <a href="" class="grey-text">
-                  <h6><?= $n['nama_penulis']; ?> <span class="badge badge-danger badge-sm">New</span></h6> 
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">
-                      <span class="badge badge-pill danger-color"></span>
-                    </a>
-                  </strong>
-                </h5>
-
-                <h4 class="font-weight-bold blue-text">
-                  <strong>Rp. <?= number_format($n['harga_produk']); ?></strong>
-                </h4>
-              
-                <div class="row">
-                  <div class="col-sm-6">
-                    <a href="<?= base_url(); ?>home/beli/<?= $n['id_produk']; ?>" class="btn btn-primary btn-sm">Beli</a>
-                  </div>
-
-                  <div class="col-sm-6">
-                    <a href="<?= base_url(); ?>home/detail/<?= $n['id_produk']; ?>" class="btn btn-warning btn-sm">Detail</a>
-                  </div>
-                </div>
-
-              </div>
-              <!--Card content-->
-
-            </div>
-            <!--Card-->
-
-          </div>
-          <?php endforeach; ?>
-          <!--Grid column-->
-
-
-         
-
-         
-
-      </section>
-      <!--Section: Products v.3-->
+<?php endforeach; ?>
      
 
-    </div>
+      
+
+    
   </main>
   <!--Main layout-->
