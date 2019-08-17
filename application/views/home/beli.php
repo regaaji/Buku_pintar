@@ -42,7 +42,7 @@
               </script>
             <form class="d-flex justify-content-left" method="post">
               <!-- Default input -->
-              <input type="text" id="number" max="<?= $beli['stok_produk']; ?>" name="jumlah" class="form-control" style="width: 100px" autocomplete="off">
+              <input type="text" id="number" max="<?= $beli['stok_produk']; ?>" name="jumlah" class="form-control" style="width: 100px" autocomplete="off" required>
               <?php if( $beli['stok_produk'] == 0) : ?>
 
                 <button class="btn btn-danger btn-md my-0 p" type="button" onclick="alert('Empty Produk');">Empty Produk
