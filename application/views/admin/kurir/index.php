@@ -18,12 +18,12 @@
 
           <?php endif; ?>
 
-             <div class="col-md-6 mb-3">
+             <div class="col-md-12 mb-3">
                    
               <div class="card">
                 <div class="card-body">
-                
-                 <table class="table table-responsive table-hover" id="tabel1">
+                <div class="table-responsive">
+                 <table class="table table-hover table-bordered" id="example1" width="1000">
                   <thead>
                     <tr>
                       <th scope="col">No</th>
@@ -49,6 +49,7 @@
                     <?php endforeach; ?>
                   </tbody>
                 </table>
+                </div>
                 <a href="<?= base_url(); ?>admin/kurir/tambahkurir" class="btn btn-info mt-4">Tambah Data</a>
 
                    

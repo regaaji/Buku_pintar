@@ -8,7 +8,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Laporan Pembelian</h1>
+          <h1 class="h3 mb-4 text-gray-800">Pembelian</h1>
 
           <div class="row mt-5">
           	
@@ -19,12 +19,12 @@
 
           
 
-             <div class="col-md-7 mb-3">
+             <div class="col-md-12 mb-3">
                    
               <div class="card">
                 <div class="card-body">
-                
-                  <table class="table table-responsive table-hover" id="example1">
+                <div class="table-responsive">
+                  <table class="table table-hover table-bordered" id="example1" width="1000">
                   <thead>
                     <tr>
                       <th>No</th>
@@ -52,7 +52,7 @@
                     <?php endforeach; ?>
                   </tbody>
                 </table>
-
+                </div>
                    
                 </div>
               </div>

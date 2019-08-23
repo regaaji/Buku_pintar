@@ -1,3 +1,9 @@
+
+<?php if(isset($_SESSION['username'])) : ?>
+<?php redirect('home/index'); ?>
+<?php else: ?>
+
+
 <main class="mt-5 pt-5">
 	<div class="container">
 		<div class="row">
@@ -38,3 +44,5 @@
 		</div>
 	</div>
 </main>
+
+<?php endif; ?>
